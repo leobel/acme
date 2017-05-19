@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "customerId":1,
+  "addressId":2,
+  "invoiceType":"ShopPurchase",
+  "invoiceDate":"2017-05-09 00:00:00",
+  "startDate":"2017-05-09 00:00:00",
+  "endDate":"2017-05-09 00:00:00"
+}
