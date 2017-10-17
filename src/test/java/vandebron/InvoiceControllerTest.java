@@ -227,13 +227,13 @@ public class InvoiceControllerTest {
     }
 
     @Test
-    public void testCreateInvoice_Invoice_ClientNotFound(){
+    public void testCreateInvoice_Invoice_ClientBadRequest(){
         InvoiceDTO invoiceDTO = getInvoiceDTO();
 
         when(clientDAO.findById(eq(invoiceDTO.getCustomerId()), eq(invoiceDTO.getAddressId()))).thenReturn(Optional.<Client>empty());
 
         Response response = invoiceController.target("/invoices").request().post(Entity.entity(invoiceDTO, "application/json"));
-        assertThat(response.getStatus()).isEqualTo(Response.Status.NOT_FOUND.getStatusCode());
+        assertThat(response.getStatus()).isEqualTo(Response.Status.BAD_REQUEST.getStatusCode());
         verify(clientDAO).findById(eq(invoiceDTO.getCustomerId()), eq(invoiceDTO.getAddressId()));
     }
 
@@ -244,6 +244,7 @@ public class InvoiceControllerTest {
         reset(invoiceDAO);
         reset(customerDAO);
         reset(addressDAO);
+        reset(clientDAO);
         reset(validator);
         reset(mapperFacade);
 

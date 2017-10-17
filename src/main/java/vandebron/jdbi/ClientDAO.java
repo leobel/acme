@@ -3,16 +3,12 @@ package vandebron.jdbi;
 import com.google.inject.Inject;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
-import vandebron.api.Repository;
-
-import java.io.Serializable;
-import java.util.List;
 import java.util.Optional;
 
 /**
  * Created by leobel on 5/18/17.
  */
-public class ClientDAO extends AbstractDAO<Client> implements Repository<Client> {
+public class ClientDAO extends AbstractDAO<Client>{
 
     @Inject
     public ClientDAO(SessionFactory sessionFactory) {
@@ -28,17 +24,5 @@ public class ClientDAO extends AbstractDAO<Client> implements Repository<Client>
      */
     public Optional<Client> findById(Long customerId, Long addressId) {
         return Optional.ofNullable(get(new Client.ClientPk(customerId, addressId)));
-    }
-
-    public Optional<Client> findById(Serializable id) {
-        return null;
-    }
-
-    public List<Client> findAll() {
-        return null;
-    }
-
-    public Client upsert(Client item) {
-        return null;
     }
 }

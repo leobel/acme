@@ -7,9 +7,8 @@ import java.util.Optional;
 import com.google.inject.Inject;
 import org.hibernate.SessionFactory;
 import io.dropwizard.hibernate.AbstractDAO;
-import vandebron.api.Repository;
 
-public class CustomerDAO extends AbstractDAO<Customer> implements Repository<Customer>{
+public class CustomerDAO extends AbstractDAO<Customer>{
 
 	/**
      * Constructor.

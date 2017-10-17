@@ -5,18 +5,16 @@ import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import vandebron.api.InvoiceDTO;
-import vandebron.api.QueryParamsRepository;
+import vandebron.services.InvoiceService;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 /**
  * Created by leobel on 5/16/17.
  */
-public class InvoiceDAO extends AbstractDAO<Invoice> implements QueryParamsRepository<Invoice> {
+public class InvoiceDAO extends AbstractDAO<Invoice> implements InvoiceService{
     private static final Logger LOGGER = LoggerFactory.getLogger(InvoiceDAO.class);
     /**
      * Constructor.

@@ -123,12 +123,9 @@ public class InvoiceController {
             }
             return Response.status(Response.Status.BAD_REQUEST).entity(validationMessages).build();
         }
-//
-//        if(!customer.isPresent()) return Response.status(Response.Status.NOT_FOUND).build();
-//        if(!address.isPresent()) return Response.status(Response.Status.NOT_FOUND).build();
 
         Optional<Client> client = clientDao.findById(invoiceDTO.getCustomerId(), invoiceDTO.getAddressId());
-        if(!client.isPresent()) return Response.status(Response.Status.NOT_FOUND).build();
+        if(!client.isPresent()) return Response.status(Response.Status.BAD_REQUEST).build();
         Optional<Customer> customer = customerDAO.findById(invoiceDTO.getCustomerId());
         Optional<Address> address = addressDAO.findById(invoiceDTO.getAddressId());
         Invoice invoice = new Invoice(invoiceDTO.getInvoiceType(), invoiceDTO.getInvoiceDate(), invoiceDTO.getStartDate(), invoiceDTO.getEndDate(), customer.get(), address.get());

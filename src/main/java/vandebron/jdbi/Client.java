@@ -49,16 +49,5 @@ public class Client {
             this.customerId = customerId;
             this.addressId = addressId;
         }
-
-        @Override
-        public boolean equals(Object obj) {
-            if(obj instanceof ClientPk){
-                ClientPk other = (ClientPk)obj;
-                return customerId == other.customerId && addressId == other.addressId;
-            }
-            else{
-                return false;
-            }
-        }
     }
 }

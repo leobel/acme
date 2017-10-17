@@ -9,8 +9,12 @@ database:
     # the JDBC URL; the database is called assignment
     url: jdbc:mysql://localhost:3306/assignment
 
+#    properties:
+#        hibernate.dialect: org.hibernate.dialect.MySQLDialect
+#        hibernate.hbm2ddl.auto: create
+
 # Logging settings.
 logging:
 
   # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
-  level: INFO
+  level: DEBUG

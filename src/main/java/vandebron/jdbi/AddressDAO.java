@@ -3,8 +3,6 @@ package vandebron.jdbi;
 import com.google.inject.Inject;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
-import vandebron.api.Repository;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +10,7 @@ import java.util.Optional;
 /**
  * Created by leobel on 5/16/17.
  */
-public class AddressDAO extends AbstractDAO<Address> implements Repository<Address>{
+public class AddressDAO extends AbstractDAO<Address>{
 
     /**
      * Constructor.
